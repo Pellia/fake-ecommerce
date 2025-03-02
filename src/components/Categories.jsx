@@ -1,5 +1,8 @@
+// Hooks
 import { useEffect, useState } from "react";
-import { useOutletContext, useParams } from "react-router-dom";
+
+// Router
+import { useOutletContext } from "react-router-dom";
 
 const Categories = () => {
     const [categories, setCategories] = useState(null);
@@ -18,8 +21,8 @@ const Categories = () => {
     }, []);
 
     return (
-        <div className="max-w-5xl mx-auto">
-            <div className="flex gap-2  flex-col items-center mt-12 mx-5">
+        <div className="max-w-7xl mx-auto">
+            <div className="flex gap-2  flex-col items-center mt-24 mx-5">
                 <h2 className="text-xl font-bold">Filter</h2>
                 <div className="flex gap-2">
                     {categories &&
@@ -34,7 +37,6 @@ const Categories = () => {
                         Reset
                     </button>
                 </div>
-                <hr className="border-neutral-300 border w-full my-2"></hr>
             </div>
         </div>
     );

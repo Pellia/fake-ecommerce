@@ -1,19 +1,17 @@
-import Categories from "../components/Categories";
-import Product from "../components/Product";
+// Router
 import { useOutletContext } from "react-router-dom";
 
+// Components
+import Categories from "../components/Categories";
+import Product from "../components/Product";
+
 const Home = () => {
-    const [storage, categoriesFilter] = useOutletContext();
-    // const [, categoriesFilter] = useOutletContext();
-    // console.log(categoriesFilter);
+    const [storage, categoriesFilter, setStorage] = useOutletContext();
 
     return (
         <>
-            <div className="flex justify-center">
-                <h1 className="text-3xl font-bold mt-2">Home</h1>
-            </div>
             <Categories />
-            <Product storage={storage} categoriesFilter={categoriesFilter} />
+            <Product storage={storage} categoriesFilter={categoriesFilter} setStorage={setStorage} />
         </>
     );
 };
