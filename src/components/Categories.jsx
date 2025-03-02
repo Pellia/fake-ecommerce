@@ -34,7 +34,7 @@ const Categories = () => {
                         Reset
                     </button>
                 </div>
-                <hr className="border-neutral-300 border w-full"></hr>
+                <hr className="border-neutral-300 border w-full my-2"></hr>
             </div>
         </div>
     );
