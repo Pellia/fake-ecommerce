@@ -4,16 +4,12 @@ import { Outlet } from "react-router-dom";
 
 const MainLayout = () => {
     const [storage, setStorage] = useState(JSON.parse(localStorage.getItem("cart")) || {});
-
-    // const test = { hi: ["test", "second"], World: ["testtest"] };
-    // const test = "test";
-
-    // console.log(storage);
+    const [categoriesFilter, setCategoriesFilter] = useState("all");
 
     return (
         <>
             <NavBar />
-            <Outlet context={storage} />
+            <Outlet context={[storage, categoriesFilter, setCategoriesFilter]} />
         </>
     );
 };
