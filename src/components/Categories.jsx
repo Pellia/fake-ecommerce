@@ -4,9 +4,9 @@ import { useEffect, useState } from "react";
 // Router
 import { useOutletContext } from "react-router-dom";
 
-const Categories = () => {
+const Categories = ({ setCategoriesFilter }) => {
     const [categories, setCategories] = useState(null);
-    const [, , setCategoriesFilter] = useOutletContext();
+    // const [, , setCategoriesFilter] = useOutletContext();
 
     const handleSelect = (category) => {
         setCategoriesFilter(category);

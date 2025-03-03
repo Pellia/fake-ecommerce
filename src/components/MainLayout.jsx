@@ -9,14 +9,11 @@ import NavBar from "./NavBar";
 
 const MainLayout = () => {
     const [storage, setStorage] = useState(JSON.parse(localStorage.getItem("cart")) || {});
-    const [categoriesFilter, setCategoriesFilter] = useState("all");
-
-    console.log(JSON.stringify(storage));
 
     return (
         <>
             <NavBar />
-            <Outlet context={[storage, categoriesFilter, setCategoriesFilter, setStorage]} />
+            <Outlet context={[storage, setStorage]} />
         </>
     );
 };
