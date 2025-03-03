@@ -2,8 +2,8 @@
 import { useState, useEffect } from "react";
 
 // Components
-import AddCart from "./AddCart";
-import CounterCart from "./CounterCart";
+import AddBtn from "./AddBtn";
+import CounterBtn from "./CounterBtn";
 
 const Product = ({ storage, categoriesFilter, setStorage }) => {
     const [products, setProducts] = useState(null);
@@ -26,7 +26,7 @@ const Product = ({ storage, categoriesFilter, setStorage }) => {
                                 <h2 className="font-bold">{product.title.slice(0, 30)}</h2>
                                 <img className="w-36 h-36 min-w-24 min-h-24 object-contain my-4" src={product.image} alt="" />
                                 <p className="font-bold">{`$${product.price}`}</p>
-                                {product.id in storage ? <CounterCart product={product} storage={storage} setStorage={setStorage} /> : <AddCart product={product} setStorage={setStorage} />}
+                                {product.id in storage ? <CounterBtn product={product} storage={storage} setStorage={setStorage} /> : <AddBtn product={product} setStorage={setStorage} />}
                             </div>
                         ) : null;
                     })}

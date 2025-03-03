@@ -1,12 +1,8 @@
 // Hooks
 import { useEffect, useState } from "react";
 
-// Router
-import { useOutletContext } from "react-router-dom";
-
 const Categories = ({ setCategoriesFilter }) => {
     const [categories, setCategories] = useState(null);
-    // const [, , setCategoriesFilter] = useOutletContext();
 
     const handleSelect = (category) => {
         setCategoriesFilter(category);
@@ -21,8 +17,8 @@ const Categories = ({ setCategoriesFilter }) => {
     }, []);
 
     return (
-        <div className="max-w-7xl mx-auto">
-            <div className="flex gap-2  flex-col items-center mt-24 mx-5">
+        <div className="max-w-7xl mx-auto mt-24">
+            <div className="flex gap-2  flex-col items-center  mx-5">
                 <h2 className="text-xl font-bold">Filter</h2>
                 <div className="flex gap-2">
                     {categories &&

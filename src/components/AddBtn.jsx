@@ -1,4 +1,4 @@
-const AddCart = ({ product, setStorage }) => {
+const AddBtn = ({ product, setStorage }) => {
     const handleAdd = (product) => {
         const previousData = JSON.parse(localStorage.getItem("cart")) || {};
         if (product.id in previousData) {
@@ -20,4 +20,4 @@ const AddCart = ({ product, setStorage }) => {
     );
 };
 
-export default AddCart;
+export default AddBtn;

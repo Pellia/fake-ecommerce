@@ -1,4 +1,4 @@
-const CounterCart = ({ product, storage, setStorage }) => {
+const CounterBtn = ({ product, storage, setStorage }) => {
     const handleAdd = (product) => {
         const previousData = JSON.parse(localStorage.getItem("cart")) || {};
         if (product.id in previousData) {
@@ -13,7 +13,6 @@ const CounterCart = ({ product, storage, setStorage }) => {
         if (product.id in previousData) {
             previousData[product.id][2]--;
             if (previousData[product.id][2] === 0) {
-                console.log("empty");
                 delete previousData[product.id];
             }
             localStorage.setItem("cart", JSON.stringify({ ...previousData }));
@@ -26,12 +25,12 @@ const CounterCart = ({ product, storage, setStorage }) => {
             <button onClick={() => handleSub(product)} className="bg-amber-300 p-2 rounded-xl w-12 text-xl font-bold">
                 -
             </button>
-            <p>{storage[product.id][2]}</p>
-            <button onClick={() => handleAdd(product)} className="bg-green-300 p-2 rounded-xl w-12 text-xl font-bold">
+            <p>{`In Cart: ${storage[product.id][2]}`}</p>
+            <button onClick={() => handleAdd(product)} className="bg-green-300 p-2 rounded-xl w-12">
                 +
             </button>
         </div>
     );
 };
 
-export default CounterCart;
+export default CounterBtn;
