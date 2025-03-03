@@ -8,6 +8,7 @@ import CounterBtn from "./CounterBtn";
 const Product = ({ storage, categoriesFilter, setStorage }) => {
     const [products, setProducts] = useState(null);
 
+    // Fetch Data
     useEffect(() => {
         fetch("https://fakestoreapi.com/products")
             .then((res) => res.json())

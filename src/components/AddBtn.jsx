@@ -1,4 +1,5 @@
 const AddBtn = ({ product, setStorage }) => {
+    // Add to Cart
     const handleAdd = (product) => {
         const previousData = JSON.parse(localStorage.getItem("cart")) || {};
         if (product.id in previousData) {
@@ -6,7 +7,7 @@ const AddBtn = ({ product, setStorage }) => {
             localStorage.setItem("cart", JSON.stringify({ ...previousData }));
             setStorage(JSON.parse(localStorage.getItem("cart")) || {});
         } else {
-            localStorage.setItem("cart", JSON.stringify({ [product.id]: [product.title, product.price, 1], ...previousData }));
+            localStorage.setItem("cart", JSON.stringify({ [product.id]: [product.title, product.price, product.image, 1], ...previousData }));
             setStorage(JSON.parse(localStorage.getItem("cart")) || {});
         }
     };
